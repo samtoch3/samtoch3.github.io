@@ -1,13 +1,14 @@
 <html>
 
 <head>
-    <title>404 - PAGE EN MAINTENANCE</title>
+    <title>PAGE EN MAINTENANCE</title>
     <link rel="icon" type="image/x-icon" href="ressources/404.png">
 </head>
 <style>
     @import url(http://fonts.googleapis.com/css?family=Raleway);
     body {
-        background-color: blue;
+        /*background-color: blue;
+        background: url('ressources/err404-1.png');*/
         background-size: 50%;
         background-attachment: fixed;
         background-size: cover;
@@ -15,7 +16,7 @@
     }
     
     h2 {
-        color: white;
+        color: black;
         padding: 30px 35px;
         margin: -10px -50px;
         text-align: center;
@@ -48,21 +49,141 @@
     a {
         color: rgb(237, 107, 107);
     }
+
+
+    /*-------------------------*/
+
+
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #0f72e5;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .popup {
+        background-color: #ffffff;
+        width: 450px;
+        padding: 30px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        text-align: center;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .popup button {
+        display: block;
+        margin: 0 0 20px auto;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .popup p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    a {
+        display: block;
+        width: 200px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+        background-color: red;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    p {
+        font-size: 3vmin;
+        line-height: 2em;
+        letter-spacing: 0.05em;
+        text-align: justify;
+        margin: 50px 0;
+        padding: 0 30px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .background {
+        background-image: url("ressources/err404.png");
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
 
-<body>
-    <div class="container">
+<body class="background">
+    <!--<div class="container">
         <div class="main">
             <h2 style="float: center;">
                 <br/><br/>
                 <img src="./ressources/pnf.png">
-                <p>La page à laquelle vous essayez d'acceder est temporairement absente. Nous travaillons au plus vite à son rétablissement. Veuillez nous excuser pour la gène occasionnée.</p>
+                <p>Merci pour votre visite sur mon portfolio. La page à laquelle vous essayer d'acceder est temporairement absente ; mais pas de panique, nous travaillons au plus vite à son retablissement. Veuillez nous excuser pour la gène occasionnée.</p>
                 <br/><br/><a href="https://samtoch3.github.io/samson.wishes/">Passez d'agréables fetes de Noël</a>
             </h2>
         </div>
+    </div>-->
+    <div class="popup" style="display: none;">
+        <button id="close">×</button>
+        <h2>ERREUR 404 - PAS DE PANIQUE</h2>
+        <p>
+            Merci pour votre visite sur mon portfolio. La page à laquelle vous essayer d'acceder est temporairement absente ; mais pas de panique, nous travaillons au plus vite à son retablissement. Veuillez nous excuser pour la gène occasionnée.
+            <br>
+        </p>
+        <a>Samson</a>
     </div>
+
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                2000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function() {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
 
 </body>
 
